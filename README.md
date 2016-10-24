@@ -46,7 +46,7 @@ new Vue(
 ```javascript
 
 ;if (typeof(VCompents)==='undefined')VCompents = {};
-VCompents['phonebook/index'] = ({
+VCompents['index'] = ({
   data: function() {
     return {
       members: [],
@@ -59,5 +59,5 @@ VCompents['phonebook/index'] = ({
     },
   }
 });
-;VCompents['phonebook/index'].template = '\n  <div class=\"container\">\n    <div class=\'search icon-input\'>\n      <span class=\"search-icon glyphicon glyphicon-search\"><\/span>\n      <input class=\"form-control\" type=\"text\" v-model=\'search\'>\n      <span @click=\'clear\' class=\"clear-icon glyphicon glyphicon-remove\"><\/span>\n    <\/div>\n    <card v-for=\"m in members\" :m=\'m\'><\/card>\n    <infinite-loading :on-infinite=\"onInfinite\"><\/infinite-loading>\n  <\/div>\n';
+;VCompents['index'].template = '\n  <div class=\"container\">\n    <div class=\'search icon-input\'>\n      <span class=\"search-icon glyphicon glyphicon-search\"><\/span>\n      <input class=\"form-control\" type=\"text\" v-model=\'search\'>\n      <span @click=\'clear\' class=\"clear-icon glyphicon glyphicon-remove\"><\/span>\n    <\/div>\n    <card v-for=\"m in members\" :m=\'m\'><\/card>\n  <\/div>\n';
 ```
