@@ -1,12 +1,14 @@
 # sprockets-vue
 A Sprockets transformer that converts .vue file into js object.
 
+# example
 * index.vue
 ```vue
 
 <script lang="coffee">
 {
   data: ->
+    search: ''
     members: []
   methods:
     clear: ->
@@ -37,4 +39,25 @@ new Vue(
     'index': VCompents['index']
   }
 )
+```
+
+# compiled javascript
+
+```javascript
+
+;if (typeof(VCompents)==='undefined')VCompents = {};
+VCompents['phonebook/index'] = ({
+  data: function() {
+    return {
+      members: [],
+      search: ''
+    };
+  },
+  methods: {
+    clear: function() {
+      return this.search = '';
+    },
+  }
+});
+;VCompents['phonebook/index'].template = '\n  <div class=\"container\">\n    <div class=\'search icon-input\'>\n      <span class=\"search-icon glyphicon glyphicon-search\"><\/span>\n      <input class=\"form-control\" type=\"text\" v-model=\'search\'>\n      <span @click=\'clear\' class=\"clear-icon glyphicon glyphicon-remove\"><\/span>\n    <\/div>\n    <card v-for=\"m in members\" :m=\'m\'><\/card>\n    <infinite-loading :on-infinite=\"onInfinite\"><\/infinite-loading>\n  <\/div>\n';
 ```
