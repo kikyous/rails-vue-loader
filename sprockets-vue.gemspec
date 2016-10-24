@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name    = 'sprockets-vue'
   s.version = Sprockets::Vue::VERSION
 
-  s.homepage    = "https://github.com/TannerRogalsky/sprockets-es6"
+  s.homepage    = "https://github.com/kikyous/sprockets-vue"
   s.summary     = "Sprockets Vue transformer"
   s.description = <<-EOS
                 A Sprockets transformer that converts .vue file into js object.
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files = [
     'lib/sprockets/vue.rb',
     'lib/sprockets/vue/version.rb',
-    'LICENSE',
+    'MIT-LICENSE',
     'README.md'
   ]
 
