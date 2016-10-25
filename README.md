@@ -4,12 +4,14 @@ A Sprockets transformer that converts .vue file into js object.
 # example
 * index.vue
 ```vue
-
+//= require ./card
 <script lang="coffee">
 {
   data: ->
     search: ''
     members: []
+  components:
+    card: VCompents.card
   methods:
     clear: ->
       this.search = ''
