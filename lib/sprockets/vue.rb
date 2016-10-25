@@ -44,5 +44,6 @@ module Sprockets
   if respond_to?(:register_transformer)
     register_mime_type 'text/vue', extensions: ['.vue'], charset: :unicode
     register_transformer 'text/vue', 'application/javascript', Vue
+    register_processor 'text/vue', Sprockets::DirectiveProcessor
   end
 end
