@@ -12,12 +12,7 @@ Gem::Specification.new do |s|
   EOS
   s.license = "MIT"
 
-  s.files = [
-    'lib/sprockets/vue.rb',
-    'lib/sprockets/vue/version.rb',
-    'MIT-LICENSE',
-    'README.md'
-  ]
+  s.files = Dir["README.md", "MIT-LICENSE", "lib/**/*.rb"]
 
   s.add_dependency 'sprockets', '>= 3.0.0'
   s.add_development_dependency 'rake'
