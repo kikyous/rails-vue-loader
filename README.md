@@ -1,5 +1,5 @@
 # sprockets-vue
-A Sprockets transformer that converts .vue file into js object.
+A [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue file into js object.
 
 # install
 add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sprockets 3.
