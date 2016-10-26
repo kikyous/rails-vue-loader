@@ -62,6 +62,8 @@ new Vue(
  you can also use `require_tree` to include all .vue file.😘
  `scoped` will not be supported. 
 
+# advanced
+* multi file compent https://github.com/kikyous/sprockets-vue/wiki/multi-file-compent
 
 
 # compiled javascript
