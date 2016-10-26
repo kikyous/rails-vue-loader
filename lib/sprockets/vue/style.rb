@@ -1,5 +1,6 @@
 class Sprockets::Vue::Style
   class << self
+    STYLE_REGEX = /\<style *(lang="(\w+)")?\>([\s\S]+)\<\/style\>/
     STYLE_COMPILES = {
       'scss' => Sprockets::ScssProcessor,
       'sass' => Sprockets::SassProcessor,
@@ -8,8 +9,7 @@ class Sprockets::Vue::Style
     def call(input)
       data = input[:data]
       input[:cache].fetch([cache_key, input[:filename], data]) do
-        style_r = /\<style *(lang="(\w+)")?\>([\s\S]+)\<\/style\>/
-        style = style_r.match(data)
+        style = STYLE_REGEX.match(data)
         if style
           lang = style[2]
           input[:data] = style[3]

@@ -1,6 +1,8 @@
 class Sprockets::Vue::Script
   class << self
     include ActionView::Helpers::JavaScriptHelper
+    SCRIPT_REGEX = /\<script *(lang="(\w+)")?\>([\s\S]+)\<\/script\>/
+    TEMPLATE_REGEX = /\<template\>([\s\S]+)\<\/template\>/
     SCRIPT_COMPILES = {
       'coffee' => ->(s, input){
         CoffeeScript.compile(s, sourceMap: true, sourceFiles: [input[:source_path]], no_wrap: true)
@@ -13,17 +15,18 @@ class Sprockets::Vue::Script
       data = input[:data]
       name = input[:name]
       input[:cache].fetch([cache_key, input[:source_path], data]) do
-        script_r = /\<script *(lang="(\w+)")?\>([\s\S]+)\<\/script\>/
-        template_r = /\<template\>([\s\S]+)\<\/template\>/
-        script = script_r.match(data)
-        lang = script[2]
-        template = template_r.match(data)
+        script = SCRIPT_REGEX.match(data)
+        template = TEMPLATE_REGEX.match(data)
+        output = ''
+        if script
+          lang = script[2]
+          result = SCRIPT_COMPILES[lang].call(script[3], input)
 
-        result = SCRIPT_COMPILES[lang].call(script[3], input)
+          output = ";if(typeof(VCompents)=='undefined')VCompents = {};
+          VCompents['#{name}'] = #{result['js']};"
+        end
 
-        output = ";if (typeof(VCompents)==='undefined')VCompents = {};
-            VCompents['#{name}'] = #{result['js']};"
-        output << "VCompents['#{name}'].template = '#{escape_javascript template[1]}';" if template
+        output << "VCompents['#{name.sub(/\.tpl$/, "")}'].template = '#{j template[1]}';" if template
 
         { data: output }
       end
