@@ -1,5 +1,5 @@
 # sprockets-vue
-A Sprockets transformer that converts .vue file into js object.
+A [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue file into js object.
 
 # install
 add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sprockets 3.
@@ -30,6 +30,14 @@ add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sproc
     <card v-for="m in members" :m='m'></card>
   </div>
 </template>
+
+<style lang="scss">
+.search{
+  .icon-input{
+    width: 100%;
+  }
+}
+</style>
 ```
 
 * application.coffee
@@ -44,6 +52,17 @@ new Vue(
   }
 )
 ```
+
+* application.scss
+```scss
+//=require index
+```
+
+> you can include .vue file in css file, it's style block will be automatic processed.
+ you can also use `require_tree` to include all .vue file.😘
+ `scoped` will not be supported. 
+
+
 
 # compiled javascript
 
