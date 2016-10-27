@@ -63,7 +63,7 @@ new Vue(
  `scoped` will not be supported. 
 
 # advanced
-* [multi file component](https://github.com/kikyous/sprockets-vue/wiki/multi-file-compent)
+* [multi file component](https://github.com/kikyous/sprockets-vue/wiki/multi-file-component)
 
 
 # compiled javascript
