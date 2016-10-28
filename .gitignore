@@ -1,0 +1,10 @@
+*.rbc
+.bundle
+*.gem
+Gemfile.lock
+README.html
+doc
+docs
+pkg
+tmp
+.DS_Store
