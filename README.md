@@ -5,6 +5,12 @@
 
 A [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue file into js object.
 
+
+# heads up!
+version 0.0.6 has incompatible change, due to bugs in previous version.
+
+now you should assign `vm` variable to make it works!
+
 # feature
 
 following tag is supported in .vue file
@@ -14,11 +20,6 @@ following tag is supported in .vue file
 
 # install
 add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sprockets 3.
-
-# heads up!
-version 0.0.6 has incompatible change, due to bugs in previous version.
-
-now you should assign `vm` variable to make it works!
 
 # example
 * index.vue
