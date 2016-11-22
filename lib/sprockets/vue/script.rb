@@ -28,7 +28,7 @@ module Sprockets::Vue
             map = result['sourceMap']
 
             output << "'object' != typeof VCompents && (VCompents = {});
-          VCompents['#{name}'] = #{result['js']};"
+              #{result['js']}; VCompents['#{name}'] = vm;"
           end
 
           if template

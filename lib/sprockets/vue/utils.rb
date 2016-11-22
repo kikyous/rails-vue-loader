@@ -3,8 +3,8 @@ module Sprockets::Vue::Utils
     def node_regex(tag)
       %r(
       \<#{tag}
-      (\s+lang=["'](?<lang>\w+)["'])?
-        \>
+        (\s+lang=["'](?<lang>\w+)["'])?
+      \>
         (?<content>.+)
       \<\/#{tag}\>
       )mx

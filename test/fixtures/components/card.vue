@@ -2,6 +2,7 @@
 //= require ./card.tpl
 //= require ./card.style
 <script lang="coffee">
+vm =
   props: ['m']
   data: ->
     m: {}

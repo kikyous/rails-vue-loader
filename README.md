@@ -3,12 +3,18 @@ A [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue
 
 # install
 add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sprockets 3.
+
+# heads up!
+version 0.0.6 has incompatible change, due to bugs in previous version.
+
+now you should assign `vm` variable to make it works!
+
 # example
 * index.vue
 ```vue
 //= require compents/card
 <script lang="coffee">
-{
+vm = {
   data: ->
     search: ''
     members: []
@@ -64,25 +70,3 @@ new Vue(
 
 # advanced
 * [multi file component](https://github.com/kikyous/sprockets-vue/wiki/multi-file-component)
-
-
-# compiled javascript
-
-```javascript
-
-;if (typeof(VCompents)==='undefined')VCompents = {};
-VCompents['index'] = ({
-  data: function() {
-    return {
-      members: [],
-      search: ''
-    };
-  },
-  methods: {
-    clear: function() {
-      return this.search = '';
-    },
-  }
-});
-;VCompents['index'].template = '\n  <div class=\"container\">\n    <div class=\'search icon-input\'>\n      <span class=\"search-icon glyphicon glyphicon-search\"><\/span>\n      <input class=\"form-control\" type=\"text\" v-model=\'search\'>\n      <span @click=\'clear\' class=\"clear-icon glyphicon glyphicon-remove\"><\/span>\n    <\/div>\n    <card v-for=\"m in members\" :m=\'m\'><\/card>\n  <\/div>\n';
-```
