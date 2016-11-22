@@ -1,5 +1,16 @@
 # sprockets-vue
+
+[![Gem](https://img.shields.io/gem/v/sprockets-vue.svg)](https://rubygems.org/gems/sprockets-vue)
+[![Gem](https://img.shields.io/gem/dt/sprockets-vue.svg)](https://rubygems.org/gems/sprockets-vue)
+
 A [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue file into js object.
+
+# feature
+
+following tag is supported in .vue file
+* script (currently coffeescript only)
+* template (currently html only)
+* style (scss, sass and css)
 
 # install
 add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sprockets 3.
