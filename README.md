@@ -26,7 +26,7 @@ add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sproc
 ```vue
 //= require components/card
 <script lang="coffee">
-vm = {
+module.exports = {
   data: ->
     search: ''
     members: []
