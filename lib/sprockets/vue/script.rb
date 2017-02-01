@@ -29,8 +29,9 @@ module Sprockets::Vue
             
             map = result['sourceMap']
 
-            output << "'object' != typeof VComponents && (VComponents = {});
-              #{result['js']}; VComponents['#{name}'] = vm;"
+            output << "'object' != typeof VComponents && (this.VComponents = {});
+              var module = { exports: nil };
+              #{result['js']}; VComponents['#{name}'] = module.exports;"
           end
 
           if template
