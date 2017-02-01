@@ -24,14 +24,14 @@ add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sproc
 # example
 * index.vue
 ```vue
-//= require compents/card
+//= require components/card
 <script lang="coffee">
 vm = {
   data: ->
     search: ''
     members: []
   components:
-    card: VCompents['compents/card']
+    card: VComponents['components/card']
   methods:
     clear: ->
       this.search = ''
@@ -66,7 +66,7 @@ vm = {
 new Vue(
   el: '#search',
   components: {
-    'index': VCompents.index
+    'index': VComponents.index
   }
 )
 ```

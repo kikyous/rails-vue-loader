@@ -26,8 +26,8 @@ class TestVue < MiniTest::Test
     asset = @env['index.js'].to_s
     context = ExecJS.compile(asset)
 
-    assert_equal context.eval("VCompents.index.data().search"), 'test'
-    components = context.eval("VCompents", bare: true)
+    assert_equal context.eval("VComponents.index.data().search"), 'test'
+    components = context.eval("VComponents", bare: true)
     assert_equal components.keys, ["components/card", "index"]
     assert components['index']['template'].match(/clear-icon glyphicon glyphicon-remove/)
     assert components['components/card']['template'].match(/@click='expand=!expand'/)

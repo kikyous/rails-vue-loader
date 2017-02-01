@@ -5,7 +5,7 @@ vm = {
     search: 'test'
     members: []
   components:
-    card: VCompents['compents/card']
+    card: VComponents['components/card']
   methods:
     clear: ->
       this.search = ''

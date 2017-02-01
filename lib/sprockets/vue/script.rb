@@ -27,12 +27,12 @@ module Sprockets::Vue
             result = SCRIPT_COMPILES[script[:lang]].call(script[:content], input)
             map = result['sourceMap']
 
-            output << "'object' != typeof VCompents && (VCompents = {});
-              #{result['js']}; VCompents['#{name}'] = vm;"
+            output << "'object' != typeof VComponents && (VComponents = {});
+              #{result['js']}; VComponents['#{name}'] = vm;"
           end
 
           if template
-            output << "VCompents['#{name.sub(/\.tpl$/, "")}'].template = '#{j template[:content]}';"
+            output << "VComponents['#{name.sub(/\.tpl$/, "")}'].template = '#{j template[:content]}';"
           end
 
           { data: "#{warp(output.join)}", map: map }
