@@ -30,7 +30,7 @@ module Sprockets::Vue
             map = result['sourceMap']
 
             output << "'object' != typeof VComponents && (this.VComponents = {});
-              var module = { exports: nil };
+              var module = { exports: null };
               #{result['js']}; VComponents['#{name}'] = module.exports;"
           end
 
