@@ -7,9 +7,14 @@ A [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue
 
 
 # heads up!
-version 0.0.6 has incompatible change, due to bugs in previous version.
 
-now you should assign `vm` variable to make it works!
+version 0.1.0 has incompatible changes, attempting to make the syntax
+work more similarly to Webpack/vue-loader.
+
+Specifically:
+
+- You should assign `module.exports` variable to make it work! (not vm)
+- Now supports normal javascript (as well as coffeescript)
 
 # feature
 
