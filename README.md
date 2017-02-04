@@ -14,6 +14,7 @@ work more similarly to Webpack/vue-loader.
 Specifically:
 
 - You should assign `module.exports` variable to make it work! (not vm)
+- You should use `VComponents` instead of `VCompents`
 - Now supports normal javascript (as well as coffeescript)
 
 # feature
