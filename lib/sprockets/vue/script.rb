@@ -13,7 +13,8 @@ module Sprockets::Vue
         },
         'es6' => ->(s, input){
           Babel::Transpiler.transform(data, {}) #TODO
-        }
+        },
+        nil => ->(s,input){ { 'js' => s } }
       }
       def call(input)
         data = input[:data]
@@ -25,14 +26,16 @@ module Sprockets::Vue
           map = nil
           if script
             result = SCRIPT_COMPILES[script[:lang]].call(script[:content], input)
+            
             map = result['sourceMap']
 
-            output << "'object' != typeof VCompents && (VCompents = {});
-              #{result['js']}; VCompents['#{name}'] = vm;"
+            output << "'object' != typeof VComponents && (this.VComponents = {});
+              var module = { exports: null };
+              #{result['js']}; VComponents['#{name}'] = module.exports;"
           end
 
           if template
-            output << "VCompents['#{name.sub(/\.tpl$/, "")}'].template = '#{j template[:content]}';"
+            output << "VComponents['#{name.sub(/\.tpl$/, "")}'].template = '#{j template[:content]}';"
           end
 
           { data: "#{warp(output.join)}", map: map }

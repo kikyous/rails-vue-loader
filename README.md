@@ -7,9 +7,14 @@ A [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue
 
 
 # heads up!
-version 0.0.6 has incompatible change, due to bugs in previous version.
 
-now you should assign `vm` variable to make it works!
+version 0.1.0 has incompatible changes, attempting to make the syntax
+work more similarly to Webpack/vue-loader.
+
+Specifically:
+
+- You should assign `module.exports` variable to make it work! (not vm)
+- Now supports normal javascript (as well as coffeescript)
 
 # feature
 
@@ -24,14 +29,14 @@ add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sproc
 # example
 * index.vue
 ```vue
-//= require compents/card
+//= require components/card
 <script lang="coffee">
-vm = {
+module.exports = {
   data: ->
     search: ''
     members: []
   components:
-    card: VCompents['compents/card']
+    card: VComponents['components/card']
   methods:
     clear: ->
       this.search = ''
@@ -66,7 +71,7 @@ vm = {
 new Vue(
   el: '#search',
   components: {
-    'index': VCompents.index
+    'index': VComponents.index
   }
 )
 ```
