@@ -19,7 +19,7 @@ Specifically:
 # feature
 
 following tag is supported in .vue file
-* script (currently coffeescript only)
+* script (coffeescript and js)
 * template (currently html only)
 * style (scss, sass and css)
 
