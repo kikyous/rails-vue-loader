@@ -1,6 +1,6 @@
 //= require components/card
 <script lang="coffee">
-vm = {
+module.exports = {
   data: ->
     search: 'test'
     members: []
