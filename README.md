@@ -1,4 +1,4 @@
-# sprockets-vue
+# rails-vue-loader(formerly sprockets-vue)
 
 [![Gem](https://img.shields.io/gem/v/sprockets-vue.svg)](https://rubygems.org/gems/sprockets-vue)
 [![Gem](https://img.shields.io/gem/dt/sprockets-vue.svg)](https://rubygems.org/gems/sprockets-vue)
