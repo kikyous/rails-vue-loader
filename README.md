@@ -5,18 +5,6 @@
 
 A [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue file into js object.
 
-
-# heads up!
-
-version 0.1.0 has incompatible changes, attempting to make the syntax
-work more similarly to Webpack/vue-loader.
-
-Specifically:
-
-- You should assign `module.exports` variable to make it work! (not vm)
-- You should use `VComponents` instead of `VCompents`
-- Now supports normal javascript (as well as coffeescript)
-
 # feature
 
 following tag is supported in .vue file
