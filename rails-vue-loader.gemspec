@@ -2,10 +2,10 @@ $:.unshift File.expand_path("../lib", __FILE__)
 require 'sprockets/vue/version'
 
 Gem::Specification.new do |s|
-  s.name    = 'sprockets-vue'
+  s.name    = 'rails-vue-loader'
   s.version = Sprockets::Vue::VERSION
 
-  s.homepage    = "https://github.com/kikyous/sprockets-vue"
+  s.homepage    = "https://github.com/kikyous/rails-vue-loader"
   s.summary     = "Sprockets Vue transformer"
   s.description = <<-EOS
                 A Sprockets transformer that converts .vue file into js object.
