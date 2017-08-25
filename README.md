@@ -13,7 +13,7 @@ following tag is supported in .vue file
 * style (scss, sass and css)
 
 # install
-add `gem 'sprockets-vue'` to Gemfile, and run bundle, currently works with sprockets 3.
+add `gem 'rails-vue-loader'` to Gemfile, and run bundle, currently works with sprockets 3.
 
 # example
 * index.vue
