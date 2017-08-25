@@ -16,7 +16,21 @@ following tag is supported in .vue file
 add `gem 'rails-vue-loader'` to Gemfile, and run bundle, currently works with sprockets 3.
 
 # example
-* index.vue
+
+* app/assets/javascripts/application.coffee
+
+```coffee
+#= require index
+
+new Vue(
+  el: '#search',
+  components: {
+    'index': VComponents.index
+  }
+)
+```
+
+* app/assets/javascripts/index.vue
 ```vue
 //= require components/card
 <script lang="coffee">
@@ -50,19 +64,6 @@ module.exports = {
   }
 }
 </style>
-```
-
-* application.coffee
-
-```coffee
-#= require index
-
-new Vue(
-  el: '#search',
-  components: {
-    'index': VComponents.index
-  }
-)
 ```
 
 * application.scss
