@@ -30,7 +30,7 @@ new Vue(
 )
 ```
 
-* app/assets/javascripts/index.vue
+* app/assets/javascripts/index.vue *(stored into VComponents.index when required)*
 ```vue
 //= require components/card
 <script lang="coffee">
