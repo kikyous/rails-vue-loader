@@ -1,7 +1,7 @@
 # rails-vue-loader
 
-[![Gem](https://img.shields.io/gem/v/sprockets-vue.svg)](https://rubygems.org/gems/sprockets-vue)
-[![Gem](https://img.shields.io/gem/dt/sprockets-vue.svg)](https://rubygems.org/gems/sprockets-vue)
+[![Gem](https://img.shields.io/gem/v/rails-vue-loader.svg)](https://rubygems.org/gems/rails-vue-loader)
+[![Gem](https://img.shields.io/gem/dt/rails-vue-loader.svg)](https://rubygems.org/gems/rails-vue-loader)
 
 rails-vue-loader(formerly sprockets-vue) -- a [Sprockets](https://github.com/rails/sprockets) transformer that converts .vue file into js object.
 
